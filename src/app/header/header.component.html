@@ -1,0 +1,51 @@
+<div class="header">
+  <div>
+    <table routerLink=''>
+      <tbody>
+        <tr>
+          <td>
+            <img src="assets/img/logo.jpg" class="logo">
+          </td>
+          <td class="text-logo">
+            <p class="texter-logo"><b>Библиотека 1420</b></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="search">
+    <form>
+      <input type="text" placeholder="Поиск книг" id="myInput" class="searcher">
+      <button id="myButton" type="button" class="search-button">Найти</button>
+    </form>
+    <br>
+    <div id="myList">
+      <div style="display: none;">Книга</div>
+      <div style="display: none;">Фантастика</div>
+      <div style="display: none;">Научное</div>
+      <div style="display: none;">Шутки</div>
+    </div>
+  </div>
+  <div class="userfield">
+    <table class="loginman">
+      <tbody>
+        <tr id="unregistered" class="unshown" routerLink="login">
+          <td>
+            <img src="assets/img/login.png" style="  width: 3.31vh; height: 3.31vh; position: relative;">
+          </td>
+          <td>
+            <p id="login">Войти</p>
+          </td>
+        </tr>
+        <tr id="registered" class="unshown">
+          <td>
+            <img src="assets/img/login.png" style="  width: 3.31vh; height: 3.31vh; position: relative;">
+          </td>
+          <td>
+            <p id="login">{{name}}</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

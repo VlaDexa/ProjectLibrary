@@ -1,0 +1,64 @@
+.logo{
+  width: 5vh;
+  height: 5vh;
+  padding: 6px;
+}
+.header{
+  display: grid;
+  grid-template-columns: 2fr 6fr 6fr;
+  grid-template-rows: 5vh;
+}
+.searcher{
+  border: 1px ridge black;
+  border-radius: 20px 0 0 20px;
+  padding-left: 1%;
+  width: 20vw;
+  height: 3vh;
+}
+.search{
+  padding-left: 13vw;
+  padding-top: 1vh;
+}
+.search-button{
+  position: relative;
+  right: 1px;
+  height: 3.155vh;
+  width: 3vw;
+  border: 1px ridge black;
+  border-radius: 0 20px 20px 0;
+  background-color: black;
+  color: whitesmoke;
+}
+td{
+  vertical-align: top;
+}
+#myList{
+  box-shadow: 1px 1px 30px #888888;
+  width: 20.3vw;
+}
+button:active, button:focus {
+  outline: none !important;
+}
+button::-moz-focus-inner {
+  border: 0 !important;
+}
+.loginman{
+  position: relative;
+  top: 0.75vh;
+  left: 20vw;
+}
+#login{
+  padding-top:0.99vh ;
+}
+.texter-logo{
+  padding: 21px 0px;
+  font-size: 1vw;
+}
+@media only screen and (max-width: 1200px){
+  .texter-logo{
+    font-size: 1.5vw;
+  }
+}
+.unshown{
+  display: none;
+}
