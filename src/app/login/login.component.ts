@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const name = document.getElementById('name');
+    const name = document.getElementById('name') as HTMLInputElement;
     // tslint:disable-next-line: only-arrow-functions
     name.addEventListener('input', function(event) {
       if (!name.validity.patternMismatch) {
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
         name.setCustomValidity('Ваше имя должно начинаться с большой буквы и состоять из букв английского или русского языка и содержать в себе только буквы');
       }
     });
-    const secondname = document.getElementById('secondname');
+    const secondname = document.getElementById('secondname') as HTMLInputElement;
     // tslint:disable-next-line: only-arrow-functions
     secondname.addEventListener('input', function(event) {
       if (!secondname.validity.patternMismatch) {
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         secondname.setCustomValidity('Ваша фамилия должна начинаться с большой буквы и состоять из букв английского или русского языка и содержать в себе только буквы');
       }
     });
-    const email = document.getElementById('email');
+    const email = document.getElementById('email') as HTMLInputElement;
     // tslint:disable-next-line: only-arrow-functions
     email.addEventListener('input', function(event) {
       if (!email.validity.patternMismatch) {
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
         const arr = ['name', 'secondname', 'email', 'gender'];
         arr.forEach(element => {
           if (document.getElementById(element)) {
-            document.getElementById(element).value = object[element];
+            (document.getElementById(element) as HTMLInputElement).value = object[element];
           }
         });
       }
