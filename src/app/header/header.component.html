@@ -29,7 +29,7 @@
   <div class="userfield">
     <table class="loginman">
       <tbody>
-        <tr id="unregistered" class="unshown" routerLink="login">
+        <tr id="unregistered" class="unshown" [routerLink]="[{ outlets: { log: ['login'] } }]">
           <td>
             <img src="assets/img/loginman.png" style="width: 3.31vh; height: 3.31vh; position: relative;">
           </td>

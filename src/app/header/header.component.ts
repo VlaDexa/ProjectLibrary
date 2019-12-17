@@ -35,10 +35,10 @@ export class HeaderComponent implements OnInit {
       const gender = 'gender';
       const namer = object[elem];
       const genderr = object[gender];
-      if (genderr === 'male') {
-        document.getElementById('loginmanreg').classList.toggle('unshown');
-      } else {
+      if (genderr === 'Женский') {
         document.getElementById('loginwomanreg').classList.toggle('unshown');
+      } else {
+        document.getElementById('loginmanreg').classList.toggle('unshown');
       }
       document.getElementById('logined').innerHTML = namer;
     }

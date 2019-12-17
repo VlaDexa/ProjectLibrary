@@ -8,9 +8,36 @@
   text-align: center;
 }
 input, select{
+  margin-top: 5px;
+  margin-bottom: 5px;
   width: 400px;
   height: 30px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.2) inset;
   border-radius: 10px;
 }
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
 
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+.container{
+  padding-left: 40vw;
+}
+.btn-success{
+  width: 150px;
+  margin-left: 125px;
+  margin-top: 5px;
+  height: 30px;
+}
+#formaker{
+  margin-top: 10px;
+}
+td{
+  vertical-align: top;
+}
+.logintext{
+  position: relative;
+  top: 30px;
+}
