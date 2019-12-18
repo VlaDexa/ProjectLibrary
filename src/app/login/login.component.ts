@@ -19,9 +19,7 @@ export class LoginComponent implements OnInit {
   newHero() {
     this.model = new Hero(42, '', '');
   }
-  constructor(
-    private _router: Router,
-    private zone: NgZone) { }
+  constructor(private zone: NgZone) { }
   reloadPage() {
     this.zone.runOutsideAngular(() => {
       location.reload();
@@ -34,7 +32,7 @@ export class LoginComponent implements OnInit {
         object[evt.target[i].name] = evt.target[i].value;
         console.log(i);
       }
-      this._router.navigation('');
+      localStorage.setItem('loginname', JSON.stringify(object));
     };
     window.onload = function () {
       if (localStorage.getItem('loginname')) {
