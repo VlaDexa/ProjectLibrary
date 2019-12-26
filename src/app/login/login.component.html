@@ -1,4 +1,6 @@
-<div class="container">
+{{registered}}
+кек
+<div class="container" *ngIf="registered">
   <div [hidden]="submitted">
     <h1>Регистрация</h1>
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm" id="formaker">

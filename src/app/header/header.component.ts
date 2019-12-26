@@ -17,6 +17,38 @@ export class HeaderComponent implements OnInit, OnChanges, AfterContentInit, Aft
     console.log('OnChanges1');
   }
   ngOnInit() {
+    if (localStorage.getItem('loginname')) {
+      console.log('Есть ЛокалСторадж');
+      const object = JSON.parse(localStorage.getItem('loginname'));
+      const elem = 'name';
+      const gender = 'gender';
+      const namer = object[elem];
+      const genderr = object[gender];
+      const registered = 1;
+      if (genderr === 'Женский') {
+        console.log('Дивка');
+        document.getElementById('loginwomanreg').classList.toggle('unshown');
+      } else {
+        console.log('Поцан');
+        document.getElementById('loginmanreg').classList.toggle('unshown');
+      }
+      document.getElementById('logined').innerHTML = namer;
+      console.log('Имя: ' + namer);
+    } else {
+      const registered = 0;
+    }
+
+    if (localStorage.getItem('loginname')) {
+        document.getElementById('loginmanreg').classList.toggle('unshown');
+
+        if ($('#login')) {
+          document.getElementById('registered').classList.toggle('unshown');
+          $('#login').html(localStorage.getItem('loginname'));
+        }
+      } else {
+        document.getElementById('unregistered').classList.toggle('unshown');
+        console.log('unregistered');
+      }
     // tslint:disable-next-line: only-arrow-functions
     $(document).ready(function () {
       // tslint:disable-next-line: only-arrow-functions
@@ -48,44 +80,12 @@ export class HeaderComponent implements OnInit, OnChanges, AfterContentInit, Aft
   }
   ngAfterViewChecked() {
     console.log('AfterViewChecked1');
-    if (localStorage.getItem('loginname')) {
-      console.log('Есть ЛокалСторадж');
-      const object = JSON.parse(localStorage.getItem('loginname'));
-      const elem = 'name';
-      const gender = 'gender';
-      const namer = object[elem];
-      const genderr = object[gender];
-      if (genderr === 'Женский') {
-        console.log('Дивка');
-        document.getElementById('loginwomanreg').classList.toggle('unshown');
-      } else {
-        console.log('Поцан');
-        document.getElementById('loginmanreg').classList.toggle('unshown');
-      }
-      document.getElementById('logined').innerHTML = namer;
-      console.log('Имя: ' + namer);
-    }
-    let registered = 0;
-    if (localStorage.getItem('loginname')) {
-      if (registered === 1) {
-        document.getElementById('loginmanreg').classList.toggle('unshown');
-        document.getElementById('unregistered').classList.toggle('unshown');
-        registered++;
-        console.log(registered);
-      }
-      if ($('#login')) {
-        document.getElementById('registered').classList.toggle('unshown');
-        $('#login').html(localStorage.getItem('loginname'));
-      } else {
-        document.getElementById('unregistered').classList.toggle('unshown');
-        console.log(registered);
-      }
-      registered++;
-    }
+
   }
-  ngOnDestroy() {
-    console.log('OnDestroy1');
-  }
+
+ngOnDestroy() {
+  console.log('OnDestroy1');
+}
 
 }
 
