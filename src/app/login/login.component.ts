@@ -27,22 +27,6 @@ export class LoginComponent implements OnInit {
     });
   }
   ngOnInit() {
-    window.onload = function() {
-      if (localStorage.getItem('loginname')) {
-        this.registered = 0;
-        console.log(this.registered);
-        const object = JSON.parse(localStorage.getItem('loginname'));
-        const arr = ['name', 'secondname', 'email', 'gender'];
-        arr.forEach(element => {
-          if (document.getElementById(element)) {
-            (document.getElementById(element) as HTMLInputElement).value = object[element];
-          }
-        });
-      } else {
-        this.registered = 1;
-        console.log(this.registered);
-      }
-    };
     document.getElementById('formaker').onsubmit = function(evt) {
       const object = {};
       for (let i = 0; i < 4; i++) {
@@ -51,6 +35,9 @@ export class LoginComponent implements OnInit {
       }
       localStorage.setItem('loginname', JSON.stringify(object));
     };
+    if (localStorage.getItem('loginname')){
+      document.getElementById('login-container').classList.add('unshown');
+    }
   }
 }
 

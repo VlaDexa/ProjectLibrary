@@ -41,3 +41,6 @@ td{
   position: relative;
   top: 30px;
 }
+.unshown{
+  display: none;
+}
