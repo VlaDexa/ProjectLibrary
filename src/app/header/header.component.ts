@@ -1,4 +1,6 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Component, OnInit, DoCheck} from '@angular/core';
+import { teachbooks } from '../teachbooks';
+import { books } from '../books';
 declare var $: any;
 // tslint:disable-next-line:no-conflicting-lifecycle
 @Component({
@@ -7,17 +9,13 @@ declare var $: any;
   styleUrls: ['./header.component.css']
 })
 // tslint:disable-next-line:max-line-length
-export class HeaderComponent implements OnInit, OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, DoCheck {
-  constructor() {
-
-  }
+export class HeaderComponent implements OnInit, DoCheck {
+  books = books;
+  teachbooks = teachbooks;
+  constructor() { }
   registered: 0;
   namer: 'kek';
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('OnChanges1');
-  }
   ngOnInit() {
-
     // tslint:disable-next-line: only-arrow-functions
     $(document).ready(function () {
       // tslint:disable-next-line: only-arrow-functions
@@ -67,24 +65,6 @@ export class HeaderComponent implements OnInit, OnChanges, AfterContentInit, Aft
       }
     }
   }
-  ngAfterContentInit() {
-    console.log('AfterContentInit1');
-  }
-  ngAfterContentChecked() {
-    console.log('AfterContentChecked1');
-  }
-  ngAfterViewInit() {
-    console.log('AfterViewInit1');
-  }
-  ngAfterViewChecked() {
-    console.log('AfterViewChecked1');
-
-  }
-
-  ngOnDestroy() {
-    console.log('OnDestroy1');
-  }
-
 }
 
 

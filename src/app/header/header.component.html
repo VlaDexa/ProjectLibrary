@@ -19,12 +19,8 @@
       <button id="myButton" type="button" class="search-button">Найти</button>
     </form>
     <br>
-    <div id="myList">
-      <div style="display: none;">Книга</div>
-      <div style="display: none;">Фантастика</div>
-      <div style="display: none;">Научное</div>
-      <div style="display: none;">Шутки</div>
-      <div style="display: none;">Mein Kampf</div>
+    <div id="myList" *ngFor='let book of books'>
+      <div style="display: none;">{{book.name}}</div>
     </div>
   </div>
   <div class="userfield">
