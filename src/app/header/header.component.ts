@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck} from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { teachbooks } from '../teachbooks';
 import { books } from '../books';
 declare var $: any;
@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit, DoCheck {
   registered: 0;
   namer: 'kek';
   ngOnInit() {
+    var shown: number = 0;
     // tslint:disable-next-line: only-arrow-functions
     $(document).ready(function () {
       // tslint:disable-next-line: only-arrow-functions
@@ -35,32 +36,34 @@ export class HeaderComponent implements OnInit, DoCheck {
     });
   }
   ngDoCheck() {
-    document.getElementById('unregistered').classList.toggle('unshown');
+    if (!document.getElementById('unregistered').classList.contains('unshown'))
+      document.getElementById('unregistered').classList.toggle('unshown');
     if (localStorage.getItem('loginname')) {
-      console.log('Есть ЛокалСторадж');
       const object = JSON.parse(localStorage.getItem('loginname'));
       const elem = 'name';
       const gender = 'gender';
       const namer = object[elem];
       const genderr = object[gender];
-      const registered = 1;
       if (genderr === 'Женский') {
-        console.log('Дивка');
-        document.getElementById('loginwomanreg').classList.toggle('unshown');
+        if (document.getElementById('loginwomanreg').classList.contains('unshown')) {
+          document.getElementById('loginwomanreg').classList.toggle('unshown');
+
+        }
       } else {
-        console.log('Поцан');
-        document.getElementById('loginmanreg').classList.toggle('unshown');
+        if (document.getElementById('loginmanreg').classList.contains('unshown')) {
+          document.getElementById('loginmanreg').classList.toggle('unshown');
+        }
       }
       document.getElementById('logined').innerHTML = namer;
-      console.log('Имя: ' + namer);
     } else {
       const registered = 0;
       document.getElementById('unregistered').classList.toggle('unshown');
-      console.log('unregistered');
     }
     if (localStorage.getItem('loginname')) {
       if ($('#login')) {
-        document.getElementById('registered').classList.toggle('unshown');
+        if (document.getElementById('registered').classList.contains('unshown')) {
+          document.getElementById('registered').classList.toggle('unshown');
+        }
         $('#login').html(localStorage.getItem('loginname'));
       }
     }

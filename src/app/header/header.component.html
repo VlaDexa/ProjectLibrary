@@ -15,18 +15,18 @@
   </div>
   <div class="search">
     <form>
-      <input type="text" placeholder="Поиск книг" id="myInput" class="searcher">
+      <input type="text" placeholder="Поиск книг" id="myInput" class="searcher" autocomplete="new-password">
       <button id="myButton" type="button" class="search-button">Найти</button>
     </form>
     <br>
-    <div id="myList" *ngFor='let book of books'>
-      <div style="display: none;">{{book.name}}</div>
+    <div id="myList">
+      <div style="display: none; padding: 5px;" *ngFor='let book of books'>{{book.name}}</div>
     </div>
   </div>
   <div class="userfield">
     <table class="loginman">
       <tbody>
-        <tr id="unregistered" [routerLink]="[{ outlets: { log: ['login'] } }]">
+        <tr id="unregistered" class="unshown" [routerLink]="[{ outlets: { log: ['login'] } }]">
           <td>
             <img src="assets/img/loginman.png" style="width: 3.31vh; height: 3.31vh; position: relative;">
           </td>
@@ -34,7 +34,7 @@
             <p id="login">Войти</p>
           </td>
         </tr>
-        <tr id="registered" class="unshown">
+        <tr id="registered" class="">
           <td>
             <img src="assets/img/loginman.png" id="loginmanreg" class="unshown" style="width: 3.31vh; height: 3.31vh; position: relative;">
             <img src="assets/img/loginwoman.png" id="loginwomanreg" class="unshown" style="width: 3.31vh; height: 3.31vh; position: relative;">
