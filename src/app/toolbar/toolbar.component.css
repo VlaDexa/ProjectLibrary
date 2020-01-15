@@ -1,0 +1,6 @@
+.toolbar{
+  display: grid;
+  grid-template-columns: 33.3vw 33.3vw 33.3vw;
+  grid-template-rows: 3vh;
+  background-color: orange;
+}

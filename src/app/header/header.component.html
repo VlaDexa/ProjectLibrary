@@ -14,13 +14,14 @@
     </table>
   </div>
   <div class="search">
-    <form>
+    <form class="serch-form">
       <input type="text" placeholder="Поиск книг" id="myInput" class="searcher" autocomplete="new-password">
-      <button id="myButton" type="button" class="search-button">Найти</button>
+      <button id="myButton" type="button" class="search-button"><p class="find">Найти</p><img src="assets/img/lopa.png" class="lopa"></button>
     </form>
     <br>
     <div id="myList">
-      <div style="display: none; padding: 5px;" *ngFor='let book of books'>{{book.name}}</div>
+      <div style="display: none; padding: 5px; text-align: center;" *ngFor='let book of books'>{{book.name}}</div>
+      <div style="display: none; padding: 5px; text-align: center;" *ngFor='let teachbook of teachbooks'>{{teachbook.author}} {{teachbook.subject}} {{teachbook.class}} класс</div>
     </div>
   </div>
   <div class="userfield">

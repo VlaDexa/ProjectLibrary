@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit, DoCheck {
   registered: 0;
   namer: 'kek';
   ngOnInit() {
-    var shown: number = 0;
     // tslint:disable-next-line: only-arrow-functions
     $(document).ready(function () {
       // tslint:disable-next-line: only-arrow-functions
@@ -36,8 +35,9 @@ export class HeaderComponent implements OnInit, DoCheck {
     });
   }
   ngDoCheck() {
-    if (!document.getElementById('unregistered').classList.contains('unshown'))
+    if (!document.getElementById('unregistered').classList.contains('unshown')) {
       document.getElementById('unregistered').classList.toggle('unshown');
+    }
     if (localStorage.getItem('loginname')) {
       const object = JSON.parse(localStorage.getItem('loginname'));
       const elem = 'name';
@@ -69,5 +69,3 @@ export class HeaderComponent implements OnInit, DoCheck {
     }
   }
 }
-
-
