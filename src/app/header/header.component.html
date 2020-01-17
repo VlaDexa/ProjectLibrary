@@ -19,7 +19,7 @@
       <button id="myButton" type="button" class="search-button"><p class="find">Найти</p><img src="assets/img/lopa.png" class="lopa"></button>
     </form>
     <br>
-    <div id="myList">
+    <div id="myList" >
       <div style="display: none; padding: 5px; text-align: center;" *ngFor='let book of books'>{{book.name}}</div>
       <div style="display: none; padding: 5px; text-align: center;" *ngFor='let teachbook of teachbooks'>{{teachbook.author}} {{teachbook.subject}} {{teachbook.class}} класс</div>
     </div>
@@ -35,16 +35,19 @@
             <p id="login">Войти</p>
           </td>
         </tr>
-        <tr id="registered" class="">
+        <tr id="registered" class="" (click)=loginmenu()>
           <td>
             <img src="assets/img/loginman.png" id="loginmanreg" class="unshown" style="width: 3.31vh; height: 3.31vh; position: relative;">
             <img src="assets/img/loginwoman.png" id="loginwomanreg" class="unshown" style="width: 3.31vh; height: 3.31vh; position: relative;">
           </td>
           <td>
-            <p id="logined" class="loginedname"></p>
+          <p id="logined" class="loginedname">{{namer}}</p>
           </td>
         </tr>
       </tbody>
     </table>
+    <div id="loginmenu" class="unshown">
+      <p (click)="Exit()">Выйти</p>
+    </div>
   </div>
 </div>

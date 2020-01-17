@@ -10,6 +10,12 @@ declare var $: any;
 })
 // tslint:disable-next-line:max-line-length
 export class HeaderComponent implements OnInit, DoCheck {
+  loginmenu() {
+    document.getElementById('loginmenu').classList.toggle('unshown');
+  }
+  Exit() {
+    localStorage.removeItem('loginname');
+  }
   books = books;
   teachbooks = teachbooks;
   constructor() { }
@@ -40,9 +46,9 @@ export class HeaderComponent implements OnInit, DoCheck {
     }
     if (localStorage.getItem('loginname')) {
       const object = JSON.parse(localStorage.getItem('loginname'));
-      const elem = 'name';
+      const name = 'name';
       const gender = 'gender';
-      const namer = object[elem];
+      const namer = object[name];
       const genderr = object[gender];
       if (genderr === 'Женский') {
         if (document.getElementById('loginwomanreg').classList.contains('unshown')) {
@@ -54,7 +60,9 @@ export class HeaderComponent implements OnInit, DoCheck {
           document.getElementById('loginmanreg').classList.toggle('unshown');
         }
       }
-      document.getElementById('logined').innerHTML = namer;
+
+      console.log(namer);
+
     } else {
       const registered = 0;
       document.getElementById('unregistered').classList.toggle('unshown');
@@ -64,7 +72,7 @@ export class HeaderComponent implements OnInit, DoCheck {
         if (document.getElementById('registered').classList.contains('unshown')) {
           document.getElementById('registered').classList.toggle('unshown');
         }
-        $('#login').html(localStorage.getItem('loginname'));
+        $('#logined').html(localStorage.getItem('loginname'));
       }
     }
   }
