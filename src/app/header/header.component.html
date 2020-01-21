@@ -4,7 +4,7 @@
       <tbody>
         <tr>
           <td>
-            <img src="assets/img/logo.jpg" class="logo">
+            <img src="assets/img/logo.png" class="logo">
           </td>
           <td class="text-logo">
             <p class="texter-logo"><b>Библиотека 1420</b></p>
@@ -35,10 +35,10 @@
             <p id="login">Войти</p>
           </td>
         </tr>
-        <tr id="registered" class="" (click)=loginmenu()>
+        <tr id="registered" class="" (click)=loginmenu() *ngIf="localStorage.getItem('loginname')">
           <td>
-            <img src="assets/img/loginman.png" id="loginmanreg" class="unshown" style="width: 3.31vh; height: 3.31vh; position: relative;">
-            <img src="assets/img/loginwoman.png" id="loginwomanreg" class="unshown" style="width: 3.31vh; height: 3.31vh; position: relative;">
+            <img src="assets/img/loginman.png" id="loginmanreg" *ngIf="genderr === 'Женский'" style="width: 3.31vh; height: 3.31vh; position: relative;">
+            <img src="assets/img/loginwoman.png" id="loginwomanreg" *ngIf="genderr === 'Мужской'" class="unshown" style="width: 3.31vh; height: 3.31vh; position: relative;">
           </td>
           <td>
           <p id="logined" class="loginedname">{{namer}}</p>

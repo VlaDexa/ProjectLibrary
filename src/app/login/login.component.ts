@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       }
       localStorage.setItem('loginname', JSON.stringify(object));
     };
-    if (localStorage.getItem('loginname')){
+    if (localStorage.getItem('loginname')) {
       document.getElementById('login-container').classList.add('unshown');
     }
   }

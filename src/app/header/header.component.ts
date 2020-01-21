@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit, DoCheck {
   books = books;
   teachbooks = teachbooks;
   constructor() { }
-  registered: 0;
+  registered: 0;6
   namer: 'kek';
   ngOnInit() {
     // tslint:disable-next-line: only-arrow-functions
@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit, DoCheck {
       );
     });
   }
-  ngDoCheck() {
+  async ngDoCheck() {
     if (!document.getElementById('unregistered').classList.contains('unshown')) {
       document.getElementById('unregistered').classList.toggle('unshown');
     }
