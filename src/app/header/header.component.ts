@@ -1,10 +1,6 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { teachbooks } from '../teachbooks';
 import { books } from '../books';
-import { Book as booker} from '../models/books';
-import {FormControl} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
 declare var $: any;
 // tslint:disable-next-line:no-conflicting-lifecycle
 @Component({
@@ -14,11 +10,6 @@ declare var $: any;
 })
 // tslint:disable-next-line:max-line-length
 export class HeaderComponent implements OnInit, DoCheck {
-  myControl = new FormControl();
-  options = new Array<string>();
-  person: booker;
-  filteredOptions: Observable<string[]>;
-  people: Array<booker> = [books, teachbooks];
   books = books;
   teachbooks = teachbooks;
   constructor() { }
@@ -51,14 +42,6 @@ export class HeaderComponent implements OnInit, DoCheck {
       }
       );
     });
-    this.people.forEach(element => {
-      this.options.push(element.name);
-    });
-
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value))
-    );
   }
   async ngDoCheck() {
     if (!document.getElementById('unregistered').classList.contains('unshown')) {
@@ -98,19 +81,5 @@ export class HeaderComponent implements OnInit, DoCheck {
         $('#logined').html(namer);
       }
     }
-  }
-  updateInfo(ev: any) {
-    console.log(ev.option.value);
-
-    this.person = this.people.find(data => data.name === ev.option.value);
-
-    console.log(this.person);
-
-
-  }
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 }
