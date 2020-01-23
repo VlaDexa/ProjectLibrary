@@ -10,7 +10,7 @@
 }
 .searcher{
   border: 1px ridge black;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px 20px;
   padding-left: 1%;
 
   height: 3vh;
@@ -30,14 +30,15 @@
   color: whitesmoke;
 }
 td{
-  vertical-align: top;
+  vertical-align: middle;
 }
 #myList{
   box-shadow: 1px 1px 30px #888888;
-  width: 20.3vw;
+  width: 30vw;
   max-height: 60vh;
   overflow: hidden;
   background-color: white;
+  position: absolute;
 }
 button:active, button:focus {
   outline: none !important;
@@ -90,9 +91,9 @@ button::-moz-focus-inner {
 .example-full-width {
   width: 100%;
 }
-@media only screen and (max-width: 1200px){
+@media only screen and (min-width: 1200px){
   .texter-logo{
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
 }
 @media only screen and (max-width:1360px){
@@ -110,7 +111,7 @@ button::-moz-focus-inner {
 }
 form{
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 100%;
 }
 @media only screen and (max-width:800px){
   .lopa{

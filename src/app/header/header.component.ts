@@ -15,27 +15,32 @@ export class HeaderComponent implements OnInit, DoCheck {
   constructor() { }
   registered: 0;
   async loginmenu() {
-    setTimeout(() => {console.log('fffff'); }, 2000);
     document.getElementById('loginmenu').classList.toggle('unshown');
-    console.log('ff');
   }
   Exit() {
     localStorage.removeItem('loginname');
     document.getElementById('registered').classList.toggle('unshown');
   }
-
+  closing() {
+    if (!document.getElementById('loginmenu').classList.contains('unshown')) {
+      document.getElementById('loginmenu').classList.toggle('unshown');
+    }
+    if (!document.getElementById('myList').classList.contains('unshown')) {
+      document.getElementById('myList').classList.toggle('unshown');
+    }
+  }
   ngOnInit() {
     // tslint:disable-next-line: only-arrow-functions
-    $(document).ready(function () {
+    $(document).ready(function() {
       // tslint:disable-next-line: only-arrow-functions
-      $('#myInput').on('keyup', function () {
+      $('#myInput').on('keyup', function() {
         const value = $('#myInput').val().toLowerCase();
         if (value !== '') {
-          $('#myList div').filter(function () {
+          $('#myList div').filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
           });
         } else {
-          $('#myList div').filter(function () {
+          $('#myList div').filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > 1);
           });
         }

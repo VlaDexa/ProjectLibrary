@@ -7,5 +7,9 @@ html{
   font-family: 'Ubuntu', sans-serif;
 }
 
-html, body { height: 100%; }
+html, body { height: 100%; width: 100vw;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar {
+  display: none;
+  }
