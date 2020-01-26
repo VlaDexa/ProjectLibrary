@@ -9,9 +9,6 @@
               <label for="name">Имя</label><br>
               <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name"
                 #name="ngModel" pattern="^[А-ЯA-Z]{1}[а-яa-z]*$">
-              <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                Введите имя
-              </div>
             </div>
           </td>
           <td class="logintext">
