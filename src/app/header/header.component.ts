@@ -26,7 +26,12 @@ export class HeaderComponent implements OnInit, DoCheck {
       document.getElementById('loginmenu').classList.toggle('unshown');
     }
     if (!document.getElementById('myList').classList.contains('unshown')) {
-      $('#myList').toggle('#myList');
+      document.getElementById('myList').classList.toggle('unshown');
+    }
+  }
+  opening() {
+    if (document.getElementById('myList').classList.contains('unshown')) {
+      document.getElementById('myList').classList.toggle('unshown');
     }
   }
   ngOnInit() {
